@@ -3,30 +3,24 @@ include 'db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verificar se campos obrigatórios foram enviados
-    if (isset($_POST["nome"], $_POST["email"], $_POST["senha"], $_POST["data_contratacao"])) {
+    if (isset($_POST["nome"], $_POST["data_fundacao"])) {
         $nome = mysqli_real_escape_string($conn, $_POST["nome"]);
-        
-       
-        // Validar email
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            echo "<div class='error'>Erro: Email inválido.</div>";
+      
+
+        // Validar data de fundação
+        $data_fundacao = mysqli_real_escape_string($conn, $_POST["data_fundacao"]);
+        if (!DateTime::createFromFormat('Y-m-d', $data_fundacao)) {
+            echo "<div class='error'>Erro: Data de fundação inválida. Use o formato AAAA-MM-DD.</div>";
         } else {
-            // Verificar se email já existe
-            $check_email = "SELECT email FROM usuarios WHERE email = '$email'";
-            $result = $conn->query($check_email);
-            
-            if ($result->num_rows > 0) {
-                echo "<div class='error'>Erro: Este email já está cadastrado.</div>";
+            // Inserir novo time
+            $sql = "INSERT INTO times (nome, data_fundacao) VALUES ('$nome', '$data_fundacao')";
+
+            if ($conn->query($sql) === TRUE) {
+                echo "<div class='success'>Time cadastrado com sucesso! <a href='read_time.php'>Ver times</a></div>";
             } else {
-                // Inserir novo usuário
-                $sql = "INSERT INTO times (nome) VALUES ('$nome')";
-                
-                if ($conn->query($sql) === TRUE) {
-                    echo "<div class='success'>Usuário cadastrado com sucesso! <a href='read_time.php'>Ver times</a></div>";
-                } else {
-                    echo "<div class='error'>Erro: " . $conn->error . "</div>";
-                }
+                echo "<div class='error'>Erro: " . $conn->error . "</div>";
             }
+        }
         }
     } else {
         echo "<div class='error'>Erro: Todos os campos obrigatórios devem ser preenchidos.</div>";
