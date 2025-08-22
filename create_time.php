@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </header>
 
     <main>
-        <form method="POST" action="read_time.php">
+        <form method="POST" action="create_time.php">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required><br><br>
 
