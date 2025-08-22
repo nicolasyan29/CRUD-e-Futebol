@@ -13,16 +13,16 @@ if ($id <= 0) {
     die("ID inválido!");
 }
 
-// Verificar se o usuário existe antes de excluir
-$sql = "SELECT * FROM usuarios WHERE id = $id";
+// Verificar se o time existe antes de excluir
+$sql = "SELECT * FROM times WHERE id = $id";
 $result = $conn->query($sql);
 
 if ($result->num_rows == 0) {
-    die("Usuário não encontrado!");
+    die("Time não encontrado!");
 }
 
-// Verificar se o usuário tem produtos associados
-$sql_check = "SELECT COUNT(*) as total FROM times WHERE id = $id";
+// Verificar se o time tem jogadores associados
+$sql_check = "SELECT COUNT(*) as total FROM jogadores WHERE id = $id";
 $result_check = $conn->query($sql_check);
 $row_check = $result_check->fetch_assoc();
 
