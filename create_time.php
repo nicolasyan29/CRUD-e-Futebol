@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "<div class='error'>Erro: Data de fundação inválida. Use o formato AAAA-MM-DD.</div>";
         } else {
             // Inserir novo time
-            $sql = "INSERT INTO times (nome, data_fundacao) VALUES ('$nome', '$data_fundacao')";
+            $sql = "INSERT INTO times (nome, ) VALUES ('$nome', )";
 
             if ($conn->query($sql) === TRUE) {
                 echo "<div class='success'>Time cadastrado com sucesso! <a href='read_time.php'>Ver times</a></div>";
