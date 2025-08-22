@@ -57,22 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required><br><br>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br><br>
-
-            <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha" required><br><br>
-
-            <label for="telefone">Telefone:</label>
-            <input type="text" id="telefone" name="telefone"><br><br>
-
-            <label for="endereco">Endereço:</label>
-            <input type="text" id="endereco" name="endereco"><br><br>
-
-            <label for="data_contratacao">Data de Contratação:</label>
-            <input type="date" id="data_contratacao" name="data_contratacao" required><br><br>
-
-            <input type="submit" value="Cadastrar Usuário">
+            <input type="submit" value="Cadastrar time:">
         </form>
     </main>
 </body>
