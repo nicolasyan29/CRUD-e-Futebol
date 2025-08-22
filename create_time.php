@@ -51,6 +51,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required><br><br>
 
+             <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade" required><br><br>
+
+
             <input type="submit" value="Cadastrar time:">
         </form>
     </main>
