@@ -36,12 +36,12 @@ include 'db.php';
 
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>
-                            <td>{$row['id_time']}</td>
+                            <td>{$row['id']}</td>
                             <td>{$row['nome']}</td>
-                            
+                            <td>{$row['cidade']}</td>
                             <td>
-                                <a href='update_time.php?id={$row['id_time']}'>Editar</a> | 
-                                <a href='delete_time.php?id={$row['id_time']}' onclick='return confirm(\"Tem certeza que deseja excluir?\")'>Excluir</a>
+                                <a href='update_time.php?id={$row['id']}>Editar</a> | 
+                                <a href='delete_time.php?id={$row['id']}' onclick='return confirm(\"Tem certeza que deseja excluir?\")'>Excluir</a>
                             </td>
                           </tr>";
                 }

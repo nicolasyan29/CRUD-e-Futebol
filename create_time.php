@@ -8,12 +8,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       
 
         // Validar data de fundação
-        $data_fundacao = mysqli_real_escape_string($conn, $_POST["data_fundacao"]);
-        if (!DateTime::createFromFormat('Y-m-d', $data_fundacao)) {
-            echo "<div class='error'>Erro: Data de fundação inválida. Use o formato AAAA-MM-DD.</div>";
-        } else {
+        
             // Inserir novo time
-            $sql = "INSERT INTO times (nome, ) VALUES ('$nome', )";
+            $sql = "INSERT INTO times (nome,cidade,) VALUES ('$nome', '$cidade', )";
 
             if ($conn->query($sql) === TRUE) {
                 echo "<div class='success'>Time cadastrado com sucesso! <a href='read_time.php'>Ver times</a></div>";
@@ -21,12 +18,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "<div class='error'>Erro: " . $conn->error . "</div>";
             }
         }
-        }
     } else {
         echo "<div class='error'>Erro: Todos os campos obrigatórios devem ser preenchidos.</div>";
     }
     $conn->close();
-}
+
 ?>
 
 <!DOCTYPE html>

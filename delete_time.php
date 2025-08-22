@@ -14,7 +14,7 @@ if ($id <= 0) {
 }
 
 // Verificar se o usuário existe antes de excluir
-$sql = "SELECT * FROM usuarios WHERE id_usuario = $id";
+$sql = "SELECT * FROM usuarios WHERE id = $id";
 $result = $conn->query($sql);
 
 if ($result->num_rows == 0) {
@@ -22,7 +22,7 @@ if ($result->num_rows == 0) {
 }
 
 // Verificar se o usuário tem produtos associados
-$sql_check = "SELECT COUNT(*) as total FROM times WHERE id_time = $id";
+$sql_check = "SELECT COUNT(*) as total FROM times WHERE id = $id";
 $result_check = $conn->query($sql_check);
 $row_check = $result_check->fetch_assoc();
 
@@ -32,7 +32,7 @@ if ($row_check['total'] > 0) {
 }
 
 // Excluir o usuário
-$sql = "DELETE FROM usuarios WHERE id_usuario = $id";
+$sql = "DELETE FROM times WHERE id = $id";
 
 if ($conn->query($sql) === TRUE) {
     echo "Usuário excluído com sucesso! 
