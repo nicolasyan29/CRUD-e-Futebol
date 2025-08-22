@@ -11,9 +11,9 @@ include 'db.php';
 </head>
 <body>
     <header>
-        <h1>👥 Gerenciar Usuários</h1>
+        <h1>👥 Gerenciar Times:</h1>
         <nav>
-            <a href="painel_admin.php">📋 Voltar ao Painel</a>
+            <a href="read_time.php">👥 Ver Times</a>
             <a href="create_time.php">➕ Adicionar Novo Time</a>
         </nav>
     </header>
@@ -31,7 +31,7 @@ include 'db.php';
                     <tr>
                         <th>ID</th>
                         <th>Nome</th>
-                        
+                        <th>Cidade</th>
                     </tr>";
 
                 while ($row = $result->fetch_assoc()) {

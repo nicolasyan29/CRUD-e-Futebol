@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "root";
-$dbname = "crud_systefutebol_db";
+$dbname = "futebol_db";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
