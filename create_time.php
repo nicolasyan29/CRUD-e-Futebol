@@ -5,12 +5,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verificar se campos obrigatórios foram enviados
     if (isset($_POST["nome"], $_POST["email"], $_POST["senha"], $_POST["data_contratacao"])) {
         $nome = mysqli_real_escape_string($conn, $_POST["nome"]);
-        $email = mysqli_real_escape_string($conn, $_POST["email"]);
-        $senha = password_hash($_POST["senha"], PASSWORD_DEFAULT); // Hash seguro da senha
-        $telefone = mysqli_real_escape_string($conn, $_POST["telefone"] ?? '');
-        $endereco = mysqli_real_escape_string($conn, $_POST["endereco"] ?? '');
-        $data_contratacao = mysqli_real_escape_string($conn, $_POST["data_contratacao"]);
-
+        
+       
         // Validar email
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             echo "<div class='error'>Erro: Email inválido.</div>";
@@ -23,11 +19,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "<div class='error'>Erro: Este email já está cadastrado.</div>";
             } else {
                 // Inserir novo usuário
-                $sql = "INSERT INTO usuarios (nome, email, senha_hash, telefone, endereco, data_contratacao) 
-                        VALUES ('$nome', '$email', '$senha', '$telefone', '$endereco', '$data_contratacao')";
+                $sql = "INSERT INTO times (nome) VALUES ('$nome')";
                 
                 if ($conn->query($sql) === TRUE) {
-                    echo "<div class='success'>Usuário cadastrado com sucesso! <a href='read_usuarios.php'>Ver usuários</a></div>";
+                    echo "<div class='success'>Usuário cadastrado com sucesso! <a href='read_time.php'>Ver times</a></div>";
                 } else {
                     echo "<div class='error'>Erro: " . $conn->error . "</div>";
                 }
@@ -53,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h1>➕ Cadastrar Novo Usuário</h1>
         <nav>
             <a href="read_usuarios.php">👥 Ver usuários</a>
-            <a href="painel_admin.php">📋 Painel Administrativo</a>
+         <a href="create_time.php">📋 Painel Administrativo</a>
         </nav>
     </header>
 
