@@ -1,136 +1,85 @@
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
 body {
-  background: #f4f6f9;
-  color: #333;
-  padding: 20px;
+    background: linear-gradient(135deg, #fffbe6 0%, #ffe4b5 100%);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
-  max-width: 900px;
-  margin: 0 auto;
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    max-width: 500px;
+    margin: 40px auto;
+    background: #fff8f0;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(180, 120, 60, 0.15);
+    padding: 32px;
+    border: 2px solid #f5deb3;
 }
 
-h1, h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #1a202c;
+h1 {
+    text-align: center;
+    color: #b8860b;
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
 }
 
 form {
-  margin-bottom: 20px;
-  display: flex;
-  gap: 10px;
-  justify-content: center;
+    margin-top: 20px;
 }
 
-form input, form select {
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  flex: 1;
+input[type="checkbox"] {
+    accent-color: #d2691e;
+    margin-right: 8px;
 }
 
-form button {
-  background: #1a73e8;
-  color: white;
-  padding: 10px 18px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s;
+input[type="submit"] {
+    background: #d2691e;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 1em;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(180, 120, 60, 0.10);
+    transition: background 0.2s;
 }
 
-form button:hover {
-  background: #1558b0;
+input[type="submit"]:hover {
+    background: #b8860b;
 }
 
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 15px;
+ul {
+    background: #fffbe6;
+    border-radius: 10px;
+    padding: 16px;
+    margin-top: 10px;
+    box-shadow: 0 1px 4px rgba(180, 120, 60, 0.07);
 }
 
-.table th, .table td {
-  border: 1px solid #ddd;
-  padding: 12px;
-  text-align: center;
+li {
+    font-size: 1.1em;
+    margin-bottom: 6px;
+    color: #8b5c2b;
 }
 
-.table th {
-  background: #1a73e8;
-  color: white;
+p {
+    color: #a0522d;
+    font-size: 1.1em;
 }
 
-.table tr:nth-child(even) {
-  background: #f9f9f9;
+@media (max-width: 600px) {
+    .container {
+        padding: 12px;
+    }
+    h1 {
+        font-size: 1.3em;
+    }
 }
 
-a.btn {
-  padding: 6px 12px;
-  border-radius: 6px;
-  text-decoration: none;
-  color: white;
-  font-size: 14px;
-  margin: 0 2px;
-}
+#logo{
+    justify-content: center;
+    text-align: center;
+    padding: auto;
 
-.btn-edit {
-  background: #ff9800;
-}
-
-.btn-edit:hover {
-  background: #e68900;
-}
-
-.btn-delete {
-  background: #e53935;
-}
-
-.btn-delete:hover {
-  background: #c62828;
-}
-
-.btn-add {
-  display: inline-block;
-  margin: 10px 0;
-  background: #4caf50;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.btn-add:hover {
-  background: #3e8e41;
-}
-
-.pagination {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.pagination a {
-  padding: 8px 14px;
-  margin: 0 3px;
-  border-radius: 6px;
-  background: #eee;
-  text-decoration: none;
-  color: #333;
-}
-
-.pagination a:hover {
-  background: #1a73e8;
-  color: white;
+    margin-left: 20px;
 }
