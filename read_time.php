@@ -14,7 +14,7 @@ include 'db.php';
         <h1>👥 Gerenciar Usuários</h1>
         <nav>
             <a href="painel_admin.php">📋 Voltar ao Painel</a>
-            <a href="create_usuario.php">➕ Adicionar Novo Usuário</a>
+            <a href="create_time.php">➕ Adicionar Novo Time</a>
         </nav>
     </header>
 
@@ -23,7 +23,7 @@ include 'db.php';
             <h2>Lista de Times</h2>
             
             <?php
-            $sql = "SELECT * FROM usuarios ORDER BY nome";
+            $sql = "SELECT * FROM times ORDER BY nome";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {

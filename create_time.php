@@ -45,9 +45,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <header>
-        <h1>➕ Cadastrar Novo Usuário</h1>
+        <h1>➕ Cadastrar Novo time</h1>
         <nav>
-            <a href="read_usuarios.php">👥 Ver usuários</a>
+            <a href="read_time.php">👥 Ver times</a>
          <a href="create_time.php">📋 Painel Administrativo</a>
         </nav>
     </header>
