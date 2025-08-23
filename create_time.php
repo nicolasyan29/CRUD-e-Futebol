@@ -2,14 +2,11 @@
 include 'db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Verificar se campos obrigatórios foram enviados
     if (isset($_POST["nome"], $_POST["cidade"])) {
         $nome = mysqli_real_escape_string($conn, $_POST["nome"]);
         $cidade = mysqli_real_escape_string($conn, $_POST["cidade"]);
 
-        // Validar data de fundação
         
-            // Inserir novo time
             $sql = "INSERT INTO times (nome,cidade) VALUES ('$nome', '$cidade')";
 
             if ($conn->query($sql) === TRUE) {

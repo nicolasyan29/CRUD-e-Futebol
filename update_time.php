@@ -17,7 +17,6 @@ if ($conn->query($sql) === TRUE) {
 $conn->close();
 }
 
-// Handle GET request to fetch existing data
 if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id'])) {
     $id = $_GET['id'];
     $result = $conn->query("SELECT * FROM times WHERE id=$id");

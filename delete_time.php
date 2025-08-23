@@ -2,7 +2,6 @@
 
 include 'db.php';
 
-// Verificar se o ID foi fornecido
 if (!isset($_GET['id']) || empty($_GET['id'])) {
     die("ID não fornecido!");
 }
@@ -13,7 +12,6 @@ if ($id <= 0) {
     die("ID inválido!");
 }
 
-// Verificar se o time existe antes de excluir
 $sql = "SELECT * FROM times WHERE id = $id";
 $result = $conn->query($sql);
 
@@ -21,7 +19,7 @@ if ($result->num_rows == 0) {
     die("Time não encontrado!");
 }
 
-// Verificar se o time tem jogadores associados
+
 $sql_check = "SELECT COUNT(*) as total FROM jogadores WHERE time_id = $id";
 $result_check = $conn->query($sql_check);
 $row_check = $result_check->fetch_assoc();
@@ -31,7 +29,7 @@ if ($row_check['total'] > 0) {
         <br><a href='read_time.php'>Voltar</a>");
 }
 
-// Excluir o time
+
 $sql = "DELETE FROM times WHERE id = $id";
 
 if ($conn->query($sql) === TRUE) {

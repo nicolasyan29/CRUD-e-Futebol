@@ -41,8 +41,8 @@ include 'db.php';
                             <td>{$row['nome']}</td>
                             <td>{$row['time_nome']}</td>
                             <td>
-                                <a href='update_time.php?id={$row['id']}'>Editar</a> | 
-                                <a href='delete_time.php?id={$row['id']}' onclick='return confirm(\"Tem certeza que deseja excluir?\")'>Excluir</a>
+<a href='update_jogador.php?id={$row['id']}'>Editar</a> | 
+<a href='delete_jogador.php?id={$row['id']}' onclick='return confirm(\"Tem certeza que deseja excluir?\")'>Excluir</a>
                             </td>
                           </tr>";
                 }
