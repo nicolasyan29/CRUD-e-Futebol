@@ -23,9 +23,11 @@ include 'db.php';
         </div>
 
     </header>
+    <img src="imagem1.jpg" alt="Futebol">
+    <img src="imagem2.jpg" alt="Futebol">
+    <img src="imagem3.jpg" alt="Futebol">
+    <img src="imagem4.jpg" alt="Futebol">
 
-    
-                   
 </body>
 </html>
-?>
+

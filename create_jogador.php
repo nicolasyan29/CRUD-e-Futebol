@@ -26,49 +26,57 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create</title>
+    <title>Cadastrar Jogador</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
+    <header>
+        <h1>➕ Cadastrar Novo Jogador</h1>
+        <nav>
+            <a href="read_jogador.php">👥 Ver Jogadores</a>
+            <a href="index.php">🏠 Página Inicial</a>
+        </nav>
+    </header>
 
-    <form id="create-jogador-form">
+    <main>
+        <div class="container">
+            <form method="POST" action="create_jogador.php">
 
-        <label for="nome">Nome:</label>
-        <input type="text" name="nome" required>
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" required>
 
-        <label for="posicao">Posição:</label>
-        <input type="text" name="posicao" required>
+                <label for="posicao">Posição:</label>
+                <input type="text" name="posicao" required>
 
-        <label for="numero_camisa">Número da Camisa:</label>
-        <input type="text" name="numero_camisa" required>
+                <label for="numero_camisa">Número da Camisa:</label>
+                <input type="number" name="numero_camisa" required>
 
-        <label for="time_id">Time:</label>
-        <select name="time_id" required>
-            <option value="">Selecione um time</option>
-            <?php
-            $sql = "SELECT * FROM times";
-            $result = $conn->query($sql);
+                <label for="time_id">Time:</label>
+                <select name="time_id" required>
+                    <option value="">Selecione um time</option>
+                    <?php
+                    $sql = "SELECT * FROM times";
+                    $result = $conn->query($sql);
 
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo "<option value='{$row['id']}'>{$row['nome']}</option>";
-                }
-            }
-            $conn->close();
-            ?>
-        </select>
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<option value='{$row['id']}'>{$row['nome']}</option>";
+                        }
+                    }
+                    $conn->close();
+                    ?>
+                </select>
 
-        <input type="submit" value="Adicionar">
-
-    </form>
-
-    <a href="read_jogador.php">Ver registros.</a>
-
+                <input type="submit" value="Cadastrar Jogador">
+            </form>
+        </div>
+    </main>
 </body>
 
 </html>
