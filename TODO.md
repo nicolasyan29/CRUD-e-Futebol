@@ -6,12 +6,12 @@
 - [ ] Adicionar link no menu principal
 
 ## RF12: Listar partidas com filtros
-- [ ] Criar read_partidas.php - listagem com paginação
-- [ ] Implementar filtros por time, período e resultado
+- [x] Criar read_partidas.php - listagem com paginação
+- [x] Implementar filtros por time, período e resultado
 
 ## RF13: Editar partida
-- [ ] Criar update_partida.php - formulário de edição
-- [ ] Manter validações existentes
+- [x] Criar update_partida.php - formulário de edição
+- [x] Manter validações existentes
 
 ## RF14: Excluir partida
 - [ ] Criar delete_partida.php - confirmação e exclusão
