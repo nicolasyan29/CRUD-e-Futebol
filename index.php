@@ -19,6 +19,8 @@ include 'db.php';
                 <a href="create_time.php">➕ Adicionar Time</a>
                 <a href="create_jogador.php">➕ Adicionar Jogador</a>
                 <a href="read_jogador.php">👥 Ver Jogadores</a>
+                <a href="read_partidas.php">📋 Ver Partidas</a>
+                <a href="create_partida.php">➕ Nova Partida</a>
             </nav>
         </div>
 

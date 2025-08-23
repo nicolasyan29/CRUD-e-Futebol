@@ -14,7 +14,7 @@
 - [x] Manter validações existentes
 
 ## RF14: Excluir partida
-- [ ] Criar delete_partida.php - confirmação e exclusão
+- [x] Criar delete_partida.php - confirmação e exclusão
 
 ## Menu Navigation
-- [ ] Atualizar index.php para incluir links de partidas
+- [x] Atualizar index.php para incluir links de partidas
