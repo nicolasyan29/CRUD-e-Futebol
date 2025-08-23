@@ -22,20 +22,20 @@ if ($result->num_rows == 0) {
 }
 
 // Verificar se o time tem jogadores associados
-$sql_check = "SELECT COUNT(*) as total FROM jogadores WHERE id = $id";
+$sql_check = "SELECT COUNT(*) as total FROM jogadores WHERE time_id = $id";
 $result_check = $conn->query($sql_check);
 $row_check = $result_check->fetch_assoc();
 
 if ($row_check['total'] > 0) {
-    die("Não é possível excluir este usuário porque ele possui produtos cadastrados. 
+    die("Não é possível excluir este time porque ele possui jogadores cadastrados. 
         <br><a href='read_time.php'>Voltar</a>");
 }
 
-// Excluir o usuário
+// Excluir o time
 $sql = "DELETE FROM times WHERE id = $id";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Usuário excluído com sucesso! 
+    echo "Time excluído com sucesso! 
         <a href='read_time.php'>Ver registros.</a>";
 } else {
     echo "Erro ao excluir: " . $conn->error;
