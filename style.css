@@ -80,6 +80,64 @@ p {
     justify-content: center;
     text-align: center;
     padding: auto;
-
     margin-left: 20px;
+}
+
+/* Button styles for edit and delete actions */
+.btn-editar, .btn-excluir {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 2px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-editar {
+    background: #28a745;
+    color: white;
+    border: 1px solid #218838;
+}
+
+.btn-editar:hover {
+    background: #218838;
+    transform: translateY(-1px);
+}
+
+.btn-excluir {
+    background: #dc3545;
+    color: white;
+    border: 1px solid #c82333;
+}
+
+.btn-excluir:hover {
+    background: #c82333;
+    transform: translateY(-1px);
+}
+
+/* Table styles for better appearance */
+.usuarios-panel table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.usuarios-panel th {
+    background: #d2691e;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+.usuarios-panel td {
+    padding: 10px;
+    border-bottom: 1px solid #f5deb3;
+}
+
+.usuarios-panel tr:hover {
+    background: #fffbe6;
 }

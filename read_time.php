@@ -13,8 +13,8 @@ include 'db.php';
     <header>
         <h1>👥 Gerenciar Times:</h1>
         <nav>
-            <a href="read_time.php">👥 Ver Times</a>
             <a href="create_time.php">➕ Adicionar Novo Time</a>
+            <a href="update_time.php">✏️ Editar Time</a>
         </nav>
     </header>
 
@@ -40,14 +40,14 @@ include 'db.php';
                             <td>{$row['nome']}</td>
                             <td>{$row['cidade']}</td>
                             <td>
-                                <a href='update_time.php?id={$row['id']}>Editar</a> | 
-                                <a href='delete_time.php?id={$row['id']}' onclick='return confirm(\"Tem certeza que deseja excluir?\")'>Excluir</a>
+                                <a href='update_time.php?id={$row['id']}' class='btn-editar'>✏️ Editar</a>
+                                <a href='delete_time.php?id={$row['id']}' class='btn-excluir' onclick='return confirm(\"Tem certeza que deseja excluir?\")'>🗑️ Excluir</a>
                             </td>
                           </tr>";
                 }
                 echo "</table>";
             } else {
-                echo "<p>Nenhum usuário cadastrado.</p>";
+                echo "<p>Nenhum time cadastrado.</p>";
             }
             ?>
         </section>
