@@ -23,7 +23,8 @@ include 'db.php';
             <h2>Lista de Jogadores</h2>
 
             <?php
-            $sql = "SELECT * FROM jogadores ORDER BY time_id";
+            $sql = "SELECT jogadores.*, times.nome AS time_nome FROM jogadores 
+                    JOIN times ON jogadores.time_id = times.id ORDER BY jogadores.time_id";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
@@ -31,16 +32,16 @@ include 'db.php';
                     <tr>
                         <th>ID</th>
                         <th>Nome</th>
-                        <th>Cidade</th>
+                        <th>Time</th>
                     </tr>";
 
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>
                             <td>{$row['id']}</td>
                             <td>{$row['nome']}</td>
-                            <td>{$row['cidade']}</td>
+                            <td>{$row['time_nome']}</td>
                             <td>
-                                <a href='update_time.php?id={$row['id']}>Editar</a> | 
+                                <a href='update_time.php?id={$row['id']}'>Editar</a> | 
                                 <a href='delete_time.php?id={$row['id']}' onclick='return confirm(\"Tem certeza que deseja excluir?\")'>Excluir</a>
                             </td>
                           </tr>";

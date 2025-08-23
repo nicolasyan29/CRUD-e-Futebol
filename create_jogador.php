@@ -9,10 +9,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $numero_camisa = $_POST['numero_camisa'];
     $time_id = $_POST['time_id'];
 
-    $sql = " INSERT INTO jogadores (nome,posicao,numero_camisa,time_id) VALUE ('$nome','$posicao','$numero_camisa','$time_id')";
+    $sql = "INSERT INTO jogadores (nome,posicao,numero_camisa,time_id) VALUES ('$nome','$posicao','$numero_camisa','$time_id')";
 
     if ($conn->query($sql) === true) {
-        echo "Novo registro criado com sucesso.";
+        header("Location: read_jogador.php");
+        exit();
     } else {
         echo "Erro " . $sql . '<br>' . $conn->error;
     }
@@ -35,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <body>
 
-    <form method="POST" action="create_jogador.php">
+    <form id="create-jogador-form">
 
         <label for="nome">Nome:</label>
         <input type="text" name="nome" required>
